@@ -4,6 +4,15 @@
  */
 package Visuales;
 
+import Clases.Estudiante;
+import Visuales.ESTUDIANTE.MenuEstudiante;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import sistemaintranet.SistemaIntranet;
+
 /**
  *
  * @author Richard
@@ -183,11 +192,20 @@ public class InicioDeSesion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        UsuarioContraseña ventanaEmergente = new UsuarioContraseña(1,this);
+
+        ventanaEmergente.setLocationRelativeTo(this);
+
+        ventanaEmergente.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
+        UsuarioContraseña ventanaEmergente = new UsuarioContraseña(2,this);
+    
+        ventanaEmergente.setLocationRelativeTo(this);
+
+        ventanaEmergente.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -195,7 +213,11 @@ public class InicioDeSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+        UsuarioContraseña ventanaEmergente = new UsuarioContraseña(3,this);
+    
+        ventanaEmergente.setLocationRelativeTo(this);
+
+        ventanaEmergente.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**

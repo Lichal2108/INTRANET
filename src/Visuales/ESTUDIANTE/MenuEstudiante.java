@@ -80,6 +80,8 @@ public class MenuEstudiante extends javax.swing.JFrame {
                 .addContainerGap(85, Short.MAX_VALUE))
         );
 
+        jButton1.getAccessibleContext().setAccessibleName("jBtnMatricula");
+
         jLayeredPane3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         jButton2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
@@ -110,11 +112,18 @@ public class MenuEstudiante extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jButton2.getAccessibleContext().setAccessibleName("jBtnHorario");
+
         jLayeredPane4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         jButton3.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         jButton3.setText("MATERIALES");
         jButton3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLayeredPane4.setLayer(jButton3, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -135,11 +144,18 @@ public class MenuEstudiante extends javax.swing.JFrame {
                 .addContainerGap(87, Short.MAX_VALUE))
         );
 
+        jButton3.getAccessibleContext().setAccessibleName("jBtnMateriales");
+
         jLayeredPane5.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
         jButton4.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         jButton4.setText("NOTAS");
         jButton4.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLayeredPane5.setLayer(jButton4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
@@ -159,6 +175,8 @@ public class MenuEstudiante extends javax.swing.JFrame {
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        jButton4.getAccessibleContext().setAccessibleName("jBtnNotas");
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jLabel3.setText("+51 919 555 055");
@@ -223,6 +241,10 @@ public class MenuEstudiante extends javax.swing.JFrame {
                 .addContainerGap(112, Short.MAX_VALUE))
         );
 
+        jLabel2.getAccessibleContext().setAccessibleName("LabelNombre");
+        jLabel3.getAccessibleContext().setAccessibleName("LabelTelefono");
+        jLabel4.getAccessibleContext().setAccessibleName("LabelDNI");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -233,6 +255,14 @@ public class MenuEstudiante extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments

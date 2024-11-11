@@ -15,7 +15,12 @@ public class Estudiante extends Usuario{
     private double puntaje;
 
     
-    
+    public Estudiante(String codigo, String contraseña, String nombres,
+                   String apellidoPaterno, String apellidoMaterno, int edad)
+        {
+        super(codigo, contraseña, nombres, apellidoPaterno, apellidoMaterno, edad);
+        
+    }
     
     
     

@@ -4,6 +4,15 @@
  */
 package Visuales;
 
+import Clases.Estudiante;
+import Visuales.ESTUDIANTE.MenuEstudiante;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import sistemaintranet.SistemaIntranet;
+
 /**
  *
  * @author Richard
@@ -13,8 +22,41 @@ public class UsuarioContraseña extends javax.swing.JFrame {
     /**
      * Creates new form Datos
      */
-    public UsuarioContraseña() {
+    private JFrame parentWindow;
+    int ventana;
+    
+    
+    SistemaIntranet sistema;
+    
+    
+    public UsuarioContraseña(int ventana,JFrame parentWindow) {
+        
+        sistema=new SistemaIntranet();
+        
+        this.ventana=ventana;
+        
+        this.parentWindow = parentWindow;
         initComponents();
+        
+        
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                mostrarPanelEmergente();
+            }
+        });
+        
+        
+        
+    }
+
+    
+    
+    private void mostrarPanelEmergente() {
+        JOptionPane.showMessageDialog(this, "Has cancelado la operación", 
+                "Aviso", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**
@@ -166,7 +208,71 @@ public class UsuarioContraseña extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        String Usuario = jTextArea1.getText();
+        String Contraseña = jTextArea2.getText();
+
+        JOptionPane.showMessageDialog(this, "1");
+       
+        
+        
+                    if ("Usuario".equals(Usuario) && "Contraseña".equals(Contraseña)) {
+                        //JOptionPane.showMessageDialog(this, "Los datos");
+                        this.dispose();
+                        parentWindow.dispose();
+                        
+                        
+                        MenuEstudiante nuevaVentana = new MenuEstudiante();
+                        nuevaVentana.setVisible(true);
+                        
+                        
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Los datos no coinciden. Inténtalo de nuevo.");
+                    }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        switch (ventana) {
+            case 1 -> {
+                ArrayList<Estudiante> listaE = sistema.getListaEstudiantes();
+                for(Estudiante estudiante : listaE){
+                    
+                    
+                    String codigo = estudiante.getCodigo();
+                    String contra = estudiante.getContraseña();
+                    if (codigo.equals(Usuario) && contra.equals(Contraseña)) {
+                        JOptionPane.showMessageDialog(this, "Los datos");
+                        this.dispose();
+                        parentWindow.dispose();
+                        
+                        
+                        MenuEstudiante nuevaVentana = new MenuEstudiante();
+                        nuevaVentana.setVisible(true);
+                        
+                        
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Los datos no coinciden. Inténtalo de nuevo.");
+                    }
+                    
+                
+                }
+            }
+                
+            case 2 -> {
+            }
+                
+            case 3 -> {
+            }
+                
+            default -> {
+            }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -198,11 +304,7 @@ public class UsuarioContraseña extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new UsuarioContraseña().setVisible(true);
-            }
-        });
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
