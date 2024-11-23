@@ -1,8 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+
 package Visuales.profesor;
+
+import Clases.Profesor;
+import java.io.File;
+import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -13,8 +17,47 @@ public class ProfesorMain extends javax.swing.JFrame {
     /**
      * Creates new form ProfesorMain
      */
-    public ProfesorMain() {
+    public ProfesorMain(Profesor menu) {
         initComponents();
+        
+       jTextField3.setText(menu.getCodigo());
+       
+       jTextField1.setText(menu.getApellidoP()+" "+ menu.getApellidoM());
+       
+       jTextField2.setText(menu.getNombres());
+       
+       jTextField4.setText(menu.getEspecialidad());
+       
+       if (menu.getImagenPerfil() != null) {
+                ImageIcon imagen = menu.getImagenPerfil();
+                jLabel2.setIcon(imagen); 
+            }
+       
+       if(menu.getImagenPerfil()==null){
+
+                JOptionPane.showMessageDialog(null, "No hay imagen para mostrar.");
+                
+                JFileChooser fileChooser = new JFileChooser();
+                fileChooser.setDialogTitle("Selecciona una imagen de perfil");
+                int resultado = fileChooser.showOpenDialog(null);
+                
+                if (resultado == JFileChooser.APPROVE_OPTION) {
+                    File archivoSeleccionado = fileChooser.getSelectedFile();
+                    menu.cargarImagenDesdeArchivo(archivoSeleccionado);
+
+                    // Mostrar la imagen en un JLabel si se cargó correctamente
+                    ImageIcon imagen = menu.getImagenPerfil();
+                    if (imagen != null) {
+                        jLabel2.setIcon(imagen); 
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se pudo cargar la imagen.");
+                    }
+                }
+            
+           
+       }
+        
+        
     }
 
     /**
@@ -228,7 +271,7 @@ public class ProfesorMain extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProfesorMain().setVisible(true);
+                new ProfesorMain(null).setVisible(true);
             }
         });
     }

@@ -12,10 +12,10 @@ import javax.swing.JFrame;
  *
  * @author Richard
  */
-public class EsHorario extends javax.swing.JFrame {
+public class VerAsistencia extends javax.swing.JFrame {
 
     JFrame parentWindow;
-    public EsHorario(JFrame parentWindow) {
+    public VerAsistencia(JFrame parentWindow) {
         initComponents();
         
         
@@ -29,7 +29,6 @@ public class EsHorario extends javax.swing.JFrame {
                 
             }
         });
-        
         
     }
 
@@ -50,27 +49,43 @@ public class EsHorario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Sources/imagen_2024-11-05_025449265.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 20, 80, 70));
+        jLabel1.setText("Total de Faltas:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, -1, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {"1", null, null, null, null, null, null},
+                {"2", null, null, null, null, null, null},
+                {"3", null, null, null, null, null, null},
+                {"4", null, null, null, null, null, null},
+                {"5", null, null, null, null, null, null},
+                {"6", null, null, null, null, null, null},
+                {"7", null, null, null, null, null, null},
+                {"8", null, null, null, null, null, null},
+                {"9", null, null, null, null, null, null},
+                {"10", null, null, null, null, null, null},
+                {"11", null, null, null, null, null, null},
+                {"12", null, null, null, null, null, null},
+                {"13", null, null, null, null, null, null},
+                {"14", null, null, null, null, null, null},
+                {"15", null, null, null, null, null, null},
+                {"16", null, null, null, null, null, null},
+                {"17", null, null, null, null, null, null},
+                {"18", null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
             },
             new String [] {
-                "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"
+                "Semana", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 640, 320));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 530, 390));
 
-        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 0, 36)); // NOI18N
-        jLabel2.setText("CRONOGRAMA");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel2.setText("Asistencias del Alumno");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -92,20 +107,21 @@ public class EsHorario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EsHorario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VerAsistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EsHorario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VerAsistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EsHorario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VerAsistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EsHorario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VerAsistencia.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EsHorario(null).setVisible(true);
+                new VerAsistencia(null).setVisible(true);
             }
         });
     }

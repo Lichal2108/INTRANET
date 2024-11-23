@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package Visuales.profesor;
+package Visuales.coordinador;
 
 /**
  *
@@ -80,7 +80,7 @@ public class modificarMaterial extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Codigo", "Titulo", "Link"
+                "Fecha", "Titulo", "Link"
             }
         ));
         jTable1.setShowGrid(true);

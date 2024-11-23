@@ -213,7 +213,7 @@ public class InicioDeSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        UsuarioContraseña ventanaEmergente = new UsuarioContraseña(3,this);
+        UsuarioContraseña ventanaEmergente = new UsuarioContraseña(4,this);
     
         ventanaEmergente.setLocationRelativeTo(this);
 

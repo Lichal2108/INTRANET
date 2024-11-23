@@ -12,14 +12,22 @@ public abstract class Usuario {
     
     
     private String codigo, contraseña, nombres;
-    private String apellidoP, apellidoM, telefono;
+    private String apellidoP, apellidoM;
+    private String especialidad, universidad, turno, sexo;
     private int edad;
 
     private byte[] imagenPerfil; 
     
     
+    
+    private String celular, dni;
+    
+    
+    //ESTUDIANTE
+    
     public Usuario( String codigo, String contraseña, String nombres,
-                   String apellidoPaterno, String apellidoMaterno, int edad) {
+                   String apellidoPaterno, String apellidoMaterno, int edad, String celular, String dni, String universidad
+                   ,String turno   , String sexo      ) {
         
         this.codigo = codigo;
         this.contraseña = contraseña;
@@ -27,19 +35,43 @@ public abstract class Usuario {
         this.apellidoP = apellidoPaterno;
         this.apellidoM = apellidoMaterno;
         this.edad = edad;
+        this.celular=celular;
+        this.dni=dni;
+        this.universidad=universidad;
+        this.turno=turno;
+        this.sexo=sexo;
     }
     
-    public Usuario(String codigo, String contraseña, String nombres,
-                   String apellidoPaterno, String apellidoMaterno) {
+    //PROFESOR
+    
+    public Usuario( String codigo, String contraseña, String nombres,
+                   String apellidoPaterno, String apellidoMaterno, String celular, String dni, String especialidad, String sexo) {
         
         this.codigo = codigo;
         this.contraseña = contraseña;
         this.nombres = nombres;
         this.apellidoP = apellidoPaterno;
         this.apellidoM = apellidoMaterno;
-        
+        this.celular=celular;
+        this.dni=dni;
+        this.especialidad= especialidad;
+        this.sexo=sexo;
     }
     
+    //COORDINADOR
+    
+    public Usuario( String codigo, String contraseña, String nombres,
+                   String apellidoPaterno, String apellidoMaterno, String celular, String dni, String sexo) {
+        
+        this.codigo = codigo;
+        this.contraseña = contraseña;
+        this.nombres = nombres;
+        this.apellidoP = apellidoPaterno;
+        this.apellidoM = apellidoMaterno;
+        this.celular=celular;
+        this.dni=dni;
+        this.sexo=sexo;
+    }
     
     
     
@@ -69,6 +101,57 @@ public abstract class Usuario {
             }
         }
         return null; // Retorna null si no hay imagen
+    }
+
+    
+    
+    
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
+    public String getUniversidad() {
+        return universidad;
+    }
+
+    public void setUniversidad(String universidad) {
+        this.universidad = universidad;
+    }
+
+    public String getTurno() {
+        return turno;
+    }
+
+    public void setTurno(String turno) {
+        this.turno = turno;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
     
     
@@ -116,13 +199,7 @@ public abstract class Usuario {
         this.apellidoM = apellidoM;
     }
 
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
+   
 
     public int getEdad() {
         return edad;

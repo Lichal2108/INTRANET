@@ -5,7 +5,10 @@
 package Visuales;
 
 import Clases.Estudiante;
+import Clases.Profesor;
 import Visuales.ESTUDIANTE.MenuEstudiante;
+import Visuales.administrador.admin_main;
+import Visuales.profesor.ProfesorMain;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
@@ -23,7 +26,7 @@ public class UsuarioContraseña extends javax.swing.JFrame {
      * Creates new form Datos
      */
     private JFrame parentWindow;
-    int ventana;
+    int tipo;
     
     
     SistemaIntranet sistema;
@@ -33,9 +36,9 @@ public class UsuarioContraseña extends javax.swing.JFrame {
         
         sistema=new SistemaIntranet();
         
-        this.ventana=ventana;
+        this.tipo=ventana;
+        this.parentWindow=parentWindow;
         
-        this.parentWindow = parentWindow;
         initComponents();
         
         
@@ -210,40 +213,14 @@ public class UsuarioContraseña extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String Usuario = jTextArea1.getText();
         String Contraseña = jTextArea2.getText();
-
-        JOptionPane.showMessageDialog(this, "1");
-       
         
-        
-                    if ("Usuario".equals(Usuario) && "Contraseña".equals(Contraseña)) {
-                        //JOptionPane.showMessageDialog(this, "Los datos");
-                        this.dispose();
-                        parentWindow.dispose();
-                        
-                        
-                        MenuEstudiante nuevaVentana = new MenuEstudiante();
-                        nuevaVentana.setVisible(true);
-                        
-                        
-                    } else {
-                        JOptionPane.showMessageDialog(this, "Los datos no coinciden. Inténtalo de nuevo.");
-                    }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        switch (ventana) {
-            case 1 -> {
-                ArrayList<Estudiante> listaE = sistema.getListaEstudiantes();
-                for(Estudiante estudiante : listaE){
-                    
-                    
+        if(tipo==1){
+            
+            
+            ArrayList<Estudiante> listaE = sistema.getListaEstudiantes();   
+            int contador=listaE.size();
+            JOptionPane.showMessageDialog(this, listaE.getFirst().getNombres());
+            for(Estudiante estudiante : listaE){
                     String codigo = estudiante.getCodigo();
                     String contra = estudiante.getContraseña();
                     if (codigo.equals(Usuario) && contra.equals(Contraseña)) {
@@ -252,27 +229,91 @@ public class UsuarioContraseña extends javax.swing.JFrame {
                         parentWindow.dispose();
                         
                         
-                        MenuEstudiante nuevaVentana = new MenuEstudiante();
+                        MenuEstudiante nuevaVentana = new MenuEstudiante(estudiante);
                         nuevaVentana.setVisible(true);
                         
                         
                     } else {
-                        JOptionPane.showMessageDialog(this, "Los datos no coinciden. Inténtalo de nuevo.");
+                        contador--;
+                        if(contador==0){
+                            JOptionPane.showMessageDialog(this, "Los datos no coinciden. Inténtalo de nuevo.");
+                        }
+                        
                     }
-                    
-                
-                }
-            }
-                
-            case 2 -> {
-            }
-                
-            case 3 -> {
-            }
-                
-            default -> {
+  
             }
         }
+        
+        
+        if(tipo==2){
+            
+            
+            ArrayList<Profesor> listaP = sistema.getListaProfesores();   
+            int contador=listaP.size();
+            JOptionPane.showMessageDialog(this, listaP.getFirst().getNombres());
+            for(Profesor profesor : listaP){
+                    String codigo = profesor.getCodigo();
+                    String contra = profesor.getContraseña();
+                    if (codigo.equals(Usuario) && contra.equals(Contraseña)) {
+                        JOptionPane.showMessageDialog(this, "Los datos");
+                        this.dispose();
+                        parentWindow.dispose();
+                        
+                        
+                        ProfesorMain nuevaVentana = new ProfesorMain(profesor);
+                        nuevaVentana.setVisible(true);
+                        
+                        
+                    } else {
+                        contador--;
+                        if(contador==0){
+                            JOptionPane.showMessageDialog(this, "Los datos no coinciden. Inténtalo de nuevo.");
+                        }
+                        
+                    }
+  
+            }
+        }
+        
+        if(tipo==3){
+            
+            
+            ArrayList<Profesor> listaP = sistema.getListaProfesores();   
+            int contador=listaP.size();
+            JOptionPane.showMessageDialog(this, listaP.getFirst().getNombres());
+            for(Profesor profesor : listaP){
+                    String codigo = profesor.getCodigo();
+                    String contra = profesor.getContraseña();
+                    if (codigo.equals(Usuario) && contra.equals(Contraseña)) {
+                        JOptionPane.showMessageDialog(this, "Los datos");
+                        this.dispose();
+                        parentWindow.dispose();
+                        
+                        
+                        ProfesorMain nuevaVentana = new ProfesorMain(profesor);
+                        nuevaVentana.setVisible(true);
+                        
+                        
+                    } else {
+                        contador--;
+                        if(contador==0){
+                            JOptionPane.showMessageDialog(this, "Los datos no coinciden. Inténtalo de nuevo.");
+                        }
+                        
+                    }
+  
+            }
+        }
+        
+        if(tipo==4){
+            
+            this.dispose();
+            parentWindow.dispose();
+                        
+            admin_main admin = new admin_main();
+            admin.setVisible(true);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -280,6 +321,7 @@ public class UsuarioContraseña extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -301,10 +343,11 @@ public class UsuarioContraseña extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(UsuarioContraseña.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new UsuarioContraseña(1,null).setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

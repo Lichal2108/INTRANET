@@ -4,22 +4,38 @@
  */
 package Clases;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Richard
  */
 public class Estudiante extends Usuario{
     private boolean deudor;
-    private boolean asistencia;
-    private String universidad, turno, ciclo;
+    private ArrayList<Boolean> asistencias;
+    
     private double puntaje;
 
+    ArrayList<Nota> notas;
+    
+    
+    String Seccion;
+    
     
     public Estudiante(String codigo, String contraseña, String nombres,
-                   String apellidoPaterno, String apellidoMaterno, int edad)
+                   String apellidoPaterno, String apellidoMaterno, int edad,String celular, String dni, String universidad, 
+                   String turno, String sexo)
         {
-        super(codigo, contraseña, nombres, apellidoPaterno, apellidoMaterno, edad);
-        
+        super(codigo, contraseña, nombres, apellidoPaterno, apellidoMaterno, edad, celular, dni, universidad, turno,sexo);
+        asistencias=new ArrayList<>();
+    }
+
+    public String getSeccion() {
+        return Seccion;
+    }
+
+    public void setSeccion(String Seccion) {
+        this.Seccion = Seccion;
     }
     
     
@@ -37,37 +53,28 @@ public class Estudiante extends Usuario{
         this.deudor = deudor;
     }
 
-    public boolean isAsistencia() {
-        return asistencia;
+    public ArrayList<Boolean> getAsistencias() {
+        if (asistencias == null) {
+            asistencias = new ArrayList<>();
+        }
+        return asistencias;
     }
 
-    public void setAsistencia(boolean asistencia) {
-        this.asistencia = asistencia;
+    public void setAsistencias(ArrayList<Boolean> asistencias) {
+        this.asistencias = asistencias;
     }
 
-    public String getUniversidad() {
-        return universidad;
+
+
+    public ArrayList<Nota> getNotas() {
+        return notas;
     }
 
-    public void setUniversidad(String universidad) {
-        this.universidad = universidad;
+    public void setNotas(ArrayList<Nota> notas) {
+        this.notas = notas;
     }
 
-    public String getTurno() {
-        return turno;
-    }
-
-    public void setTurno(String turno) {
-        this.turno = turno;
-    }
-
-    public String getCiclo() {
-        return ciclo;
-    }
-
-    public void setCiclo(String ciclo) {
-        this.ciclo = ciclo;
-    }
+    
 
     public double getPuntaje() {
         return puntaje;

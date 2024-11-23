@@ -4,17 +4,32 @@
  */
 package Visuales.ESTUDIANTE;
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Richard
  */
 public class EsMateriales extends javax.swing.JFrame {
 
-    /**
-     * Creates new form EsMateriales
-     */
-    public EsMateriales() {
+    JFrame parentWindow;
+    public EsMateriales(JFrame parentWindow) {
         initComponents();
+        
+        
+        this.parentWindow=parentWindow;
+        
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                
+            }
+        });
+        
     }
 
     /**
@@ -338,7 +353,7 @@ public class EsMateriales extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EsMateriales().setVisible(true);
+                new EsMateriales(null).setVisible(true);
             }
         });
     }

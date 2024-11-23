@@ -4,6 +4,10 @@
  */
 package Visuales.ESTUDIANTE;
 
+import Clases.Estudiante;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Richard
@@ -13,8 +17,30 @@ public class MenuEstudiante extends javax.swing.JFrame {
     /**
      * Creates new form MenuEstudiante
      */
-    public MenuEstudiante() {
+    public MenuEstudiante(Estudiante menu) {
         initComponents();
+        
+        
+        
+        jLabel2.setText(menu.getNombres()+" "+menu.getApellidoP()+" "+menu.getApellidoM());
+        
+        jLabel3.setText(menu.getCelular());
+        
+        jLabel4.setText(menu.getCodigo());
+        
+        
+        
+        ImageIcon iconoImagen = menu.getImagenPerfil();
+            if (iconoImagen != null) {
+                jLabel1.setIcon(iconoImagen); // Configura el ImageIcon en el JLabel
+            } else {
+                JOptionPane.showMessageDialog(null, "No hay imagen para mostrar.");
+            }
+    
+    
+    
+        
+        
     }
 
     /**
@@ -47,13 +73,12 @@ public class MenuEstudiante extends javax.swing.JFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Sources/Alumno.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jLabel2.setText("Marco Díaz, Mamani Quispe");
 
         jLayeredPane2.setBackground(new java.awt.Color(243, 213, 74));
         jLayeredPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
         jButton1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        jButton1.setText("MATRICULA");
+        jButton1.setText("jnjk");
         jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,10 +204,8 @@ public class MenuEstudiante extends javax.swing.JFrame {
         jButton4.getAccessibleContext().setAccessibleName("jBtnNotas");
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jLabel3.setText("+51 919 555 055");
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        jLabel4.setText("777 777 77");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -238,7 +261,7 @@ public class MenuEstudiante extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLayeredPane2)
                             .addComponent(jLayeredPane5))))
-                .addContainerGap(112, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         jLabel2.getAccessibleContext().setAccessibleName("LabelNombre");
@@ -249,19 +272,25 @@ public class MenuEstudiante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        VerAsistencia matricula=new VerAsistencia(this);
+        matricula.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        
+        EsHorario horario=new EsHorario(this);
+        horario.setVisible(true);
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        EsMateriales materiales=new EsMateriales(this);
+        materiales.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
+        EsNotas notas=new EsNotas(this);
+        notas.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
@@ -294,7 +323,7 @@ public class MenuEstudiante extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuEstudiante().setVisible(true);
+                new MenuEstudiante(null).setVisible(true);
             }
         });
     }
