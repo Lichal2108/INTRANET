@@ -14,12 +14,10 @@ import javax.swing.JOptionPane;
  */
 public class MenuEstudiante extends javax.swing.JFrame {
 
-    /**
-     * Creates new form MenuEstudiante
-     */
+    private Estudiante menu;
     public MenuEstudiante(Estudiante menu) {
         initComponents();
-        
+        this.menu=menu;
         
         
         jLabel2.setText(menu.getNombres()+" "+menu.getApellidoP()+" "+menu.getApellidoM());
@@ -32,7 +30,7 @@ public class MenuEstudiante extends javax.swing.JFrame {
         
         ImageIcon iconoImagen = menu.getImagenPerfil();
             if (iconoImagen != null) {
-                jLabel1.setIcon(iconoImagen); // Configura el ImageIcon en el JLabel
+                
             } else {
                 JOptionPane.showMessageDialog(null, "No hay imagen para mostrar.");
             }
@@ -56,7 +54,7 @@ public class MenuEstudiante extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLayeredPane2 = new javax.swing.JLayeredPane();
-        jButton1 = new javax.swing.JButton();
+        BtnAsistencias = new javax.swing.JButton();
         jLayeredPane3 = new javax.swing.JLayeredPane();
         jButton2 = new javax.swing.JButton();
         jLayeredPane4 = new javax.swing.JLayeredPane();
@@ -77,16 +75,16 @@ public class MenuEstudiante extends javax.swing.JFrame {
         jLayeredPane2.setBackground(new java.awt.Color(243, 213, 74));
         jLayeredPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
-        jButton1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        jButton1.setText("jnjk");
-        jButton1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        BtnAsistencias.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        BtnAsistencias.setText("ASISTENCIAS");
+        BtnAsistencias.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        BtnAsistencias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                BtnAsistenciasActionPerformed(evt);
             }
         });
 
-        jLayeredPane2.setLayer(jButton1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(BtnAsistencias, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
@@ -94,18 +92,18 @@ public class MenuEstudiante extends javax.swing.JFrame {
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnAsistencias, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jLayeredPane2Layout.setVerticalGroup(
             jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(BtnAsistencias, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(85, Short.MAX_VALUE))
         );
 
-        jButton1.getAccessibleContext().setAccessibleName("jBtnMatricula");
+        BtnAsistencias.getAccessibleContext().setAccessibleName("jBtnMatricula");
 
         jLayeredPane3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
 
@@ -271,25 +269,25 @@ public class MenuEstudiante extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        VerAsistencia matricula=new VerAsistencia(this);
-        matricula.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void BtnAsistenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnAsistenciasActionPerformed
+        VerAsistencia asistencias=new VerAsistencia(this,menu);
+        asistencias.setVisible(true);
+    }//GEN-LAST:event_BtnAsistenciasActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         
-        EsHorario horario=new EsHorario(this);
+        EsHorario horario=new EsHorario(this,menu);
         horario.setVisible(true);
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        EsMateriales materiales=new EsMateriales(this);
+        EsMateriales materiales=new EsMateriales(this,menu);
         materiales.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        EsNotas notas=new EsNotas(this);
+        EsNotas notas=new EsNotas(this,menu);
         notas.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
@@ -329,7 +327,7 @@ public class MenuEstudiante extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton BtnAsistencias;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;

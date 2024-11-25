@@ -172,7 +172,7 @@ public class CrearSalon extends javax.swing.JFrame {
         jLabel4.setText("Inscritos en:");
 
         jBtnGuardarNombre.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jBtnGuardarNombre.setText("Guardar Nombre");
+        jBtnGuardarNombre.setText("Buscar Alumnos Disponibles");
         jBtnGuardarNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBtnGuardarNombreActionPerformed(evt);
@@ -184,42 +184,40 @@ public class CrearSalon extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(363, 363, 363)
+                .addGap(57, 57, 57)
+                .addComponent(jBtnFinalizarRegistro)
+                .addGap(146, 146, 146)
                 .addComponent(BtnAgregarEstudianteASeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jBtnEliminarEstudianteDeSeccion, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(197, 197, 197))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap(59, Short.MAX_VALUE)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jBtnFinalizarRegistro)
-                                .addGap(58, 58, 58))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jBtnCancelarRegistro)
-                                .addGap(88, 88, 88))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(JTextNombreSeccion)
-                            .addComponent(jLabel2)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jComboBoxUniversidad, javax.swing.GroupLayout.Alignment.TRAILING, 0, 92, Short.MAX_VALUE)
-                                    .addComponent(cmbTurno, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jBtnGuardarNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
+                        .addComponent(jBtnGuardarNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(31, 31, 31)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(JTextNombreSeccion)
+                                    .addComponent(jLabel2)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                                .addComponent(jLabel5)
+                                                .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jComboBoxUniversidad, javax.swing.GroupLayout.Alignment.TRAILING, 0, 92, Short.MAX_VALUE)
+                                            .addComponent(cmbTurno, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(89, 89, 89)
+                                .addComponent(jBtnCancelarRegistro)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 347, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
@@ -249,21 +247,20 @@ public class CrearSalon extends javax.swing.JFrame {
                             .addComponent(jLabel5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                         .addComponent(jBtnGuardarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(53, 53, 53)
-                        .addComponent(jBtnCancelarRegistro)
-                        .addGap(38, 38, 38)
-                        .addComponent(jBtnFinalizarRegistro))
+                        .addGap(123, 123, 123)
+                        .addComponent(jBtnCancelarRegistro))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(24, 24, 24)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
-                .addGap(29, 29, 29)
+                .addGap(22, 22, 22)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(BtnAgregarEstudianteASeccion)
-                    .addComponent(jBtnEliminarEstudianteDeSeccion))
-                .addGap(22, 22, 22))
+                    .addComponent(jBtnEliminarEstudianteDeSeccion)
+                    .addComponent(jBtnFinalizarRegistro))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -276,9 +273,9 @@ public class CrearSalon extends javax.swing.JFrame {
                         .addGap(436, 436, 436)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 282, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
+                        .addGap(44, 44, 44)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -338,8 +335,50 @@ public class CrearSalon extends javax.swing.JFrame {
     }//GEN-LAST:event_jBtnEliminarEstudianteDeSeccionActionPerformed
 
     private void jBtnCancelarRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCancelarRegistroActionPerformed
-        JOptionPane.showMessageDialog(this, "Has cancelado la operación", 
-                "Aviso", JOptionPane.INFORMATION_MESSAGE);
+        String nombreSeccion = JTextNombreSeccion.getText().trim();
+
+        if (!nombreSeccion.isEmpty()) {
+            sistema.getOrganizador().getSecciones().remove(nombreSeccion);
+        }
+
+        // Mover los estudiantes de la tabla de la sección de vuelta a la tabla de estudiantes disponibles
+        DefaultTableModel modeloSeccion = (DefaultTableModel) jTableAlumnosEnLaSeccion.getModel();
+        DefaultTableModel modeloDisponibles = (DefaultTableModel) jTableAlumnosDisponibles.getModel();
+
+        for (int i = 0; i < modeloSeccion.getRowCount(); i++) {
+            String codigo = modeloSeccion.getValueAt(i, 0).toString();
+            String nombre = modeloSeccion.getValueAt(i, 1).toString();
+            String apellido = modeloSeccion.getValueAt(i, 2).toString();
+
+            // Restaurar al estudiante en la lista de estudiantes disponibles
+            modeloDisponibles.addRow(new Object[]{codigo, nombre, apellido});
+
+            // Restaurar el atributo de sección del estudiante a vacío
+            for (Estudiante est : sistema.getListaEstudiantes()) {
+                if (est.getCodigo().equals(codigo)) {
+                    est.setSeccion(""); // Limpiar sección asignada
+                    break;
+                }
+            }
+        }
+
+        // Limpiar ambas tablas
+        modeloSeccion.setRowCount(0);
+
+        // Restablecer los campos de texto y combo box
+        JTextNombreSeccion.setText("");
+        jComboBoxUniversidad.setSelectedIndex(0);
+        cmbTurno.setSelectedIndex(0);
+        jLabel4.setText("Inscritos en:"); // Restaurar el texto original del label
+
+        // Habilitar los campos para que puedan ser editados de nuevo
+        JTextNombreSeccion.setEnabled(true);
+        jComboBoxUniversidad.setEnabled(true);
+        cmbTurno.setEnabled(true);
+
+        // Mostrar un mensaje al usuario
+        JOptionPane.showMessageDialog(this, "Registro cancelado. La sección ha sido eliminada y los datos han sido restaurados.", 
+                "Información", JOptionPane.INFORMATION_MESSAGE);
        
     }//GEN-LAST:event_jBtnCancelarRegistroActionPerformed
 

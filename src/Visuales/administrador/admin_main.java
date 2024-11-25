@@ -40,8 +40,6 @@ public class admin_main extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         btn_registrarUsuario = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        btn_modificar_usuario = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         btn_motrarUsuario = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
@@ -104,25 +102,6 @@ public class admin_main extends javax.swing.JFrame {
             .addComponent(btn_registrarUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
         );
 
-        btn_modificar_usuario.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
-        btn_modificar_usuario.setText("Modificar usuario");
-        btn_modificar_usuario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_modificar_usuarioActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_modificar_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_modificar_usuario, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-        );
-
         btn_motrarUsuario.setFont(new java.awt.Font("Segoe UI", 1, 15)); // NOI18N
         btn_motrarUsuario.setText("Mostrar usuario");
         btn_motrarUsuario.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +148,6 @@ public class admin_main extends javax.swing.JFrame {
                 .addGap(174, 174, 174)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(205, Short.MAX_VALUE))
@@ -179,9 +157,7 @@ public class admin_main extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addGap(63, 63, 63)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,12 +228,6 @@ public class admin_main extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_btn_registrarUsuarioActionPerformed
 
-    private void btn_modificar_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_modificar_usuarioActionPerformed
-        modificar_perfil modificar=new modificar_perfil();
-        modificar.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btn_modificar_usuarioActionPerformed
-
     private void btn_motrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_motrarUsuarioActionPerformed
         mostrar_usuarios mostrar=new mostrar_usuarios();
         mostrar.setVisible(true);
@@ -307,7 +277,6 @@ public class admin_main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_eliminarUsuario;
-    private javax.swing.JButton btn_modificar_usuario;
     private javax.swing.JButton btn_motrarUsuario;
     private javax.swing.JButton btn_registrarUsuario;
     private javax.swing.JButton jButton1;
@@ -317,7 +286,6 @@ public class admin_main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables

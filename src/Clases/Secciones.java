@@ -4,6 +4,7 @@ package Clases;
 import java.util.ArrayList;
 
 public class Secciones {
+    
         ArrayList<String> secciones = new ArrayList<>();
 
         public ArrayList<String> getSecciones() {

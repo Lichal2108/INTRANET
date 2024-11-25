@@ -4,6 +4,7 @@
  */
 package Visuales.ESTUDIANTE;
 
+import Clases.Estudiante;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
@@ -16,7 +17,7 @@ import javax.swing.JOptionPane;
 public class EsNotas extends javax.swing.JFrame {
 
     JFrame parentWindow;
-    public EsNotas(JFrame parentWindow) {
+    public EsNotas(JFrame parentWindow, Estudiante usuario) {
         initComponents();
         
         
@@ -225,7 +226,7 @@ public class EsNotas extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EsNotas(null).setVisible(true);
+               
             }
         });
     }
